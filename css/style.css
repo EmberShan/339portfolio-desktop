@@ -1,0 +1,482 @@
+/* styles for all pages */
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* text styling */
+  color: #123440;
+  text-align: center;
+  line-height: 2;
+  background-color: #123440;
+}
+
+/* skip to */
+a.skip{
+  background: whitesmoke;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: top 1s ease-out;
+  transition: opacity 1s ease-out;
+  z-index: 10;
+}
+a.skip:focus{
+  top: 20px;
+  opacity: 1;
+  color: black;
+}
+/* the navigation menu */
+.menu{
+  background-color: #123440;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.sticky{
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+main{
+  padding-top: 3em;
+}
+/*  */
+.hamburger-menu{
+  position: absolute; 
+  top: 1em;
+  right: 1.5em;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  width: 1.5em;
+  height: 1em;
+  /* background-color: #0D1821; */
+}
+.hamburger-menu .bar{
+  height: 3px;
+  width: 100%;
+  background-color: whitesmoke;
+}
+.navlinks.active{
+  display: flex;
+}
+/*  */
+.navlinks{
+  text-align: center;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.navlinks ul{
+  /*  */
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.navlinks .link, .menu .menu-bar{
+  flex-direction: column-reverse;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: capitalize;
+  color: whitesmoke;
+  height: 3em;
+  padding-top: .5em;
+}
+
+/* nav li of the current page */
+.navlinks .displayed{
+  background-color: whitesmoke;
+}
+.navlinks .displayed .link{
+  color: #123440;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  overflow: hidden;
+}
+
+
+/* other elements for all the pages */
+h1{
+  font-size: 1.5em;
+  font-weight: 700;
+  padding-top: 4%;
+  min-width: 100%;
+  text-transform: capitalize;
+}
+.page-intro{
+  font-style: italic;
+  padding: 0 4% 4% 4%;
+  font-size: .9em;
+}
+p{
+  padding-bottom: 5%;
+}
+
+
+/* single images container; used on monet and gallery pages*/
+.img{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  padding: 10px 10px 10px 10px;
+  background-color: rgba(249, 252, 255, .8);
+  margin: 3%;
+}
+/* image caption */
+.caption{
+  font-size: .8em;
+  font-style: italic;
+  color: rgb(110, 109, 109);
+  padding: 1% 0 4% 0;
+  line-height: 1;
+}
+
+/* footer */
+footer{
+  text-align: center;
+  font-weight: 400;
+  color: whitesmoke;
+  background-color: #123440;
+}
+footer p{
+  padding : 0;
+}
+
+/* styles for Monet main page */
+/* container for all content on the Monet page */
+
+#monet-container{
+  background-color: #d9cfc9;
+
+  background-image: url(../images/background8.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  display: grid;
+  grid-template-rows: repeat(auto, 3);
+
+}
+.monet-description{
+  grid-row: 1 / 2;
+}
+.impress-description{
+  grid-row: 2 / 3;
+}
+.realism-vs-impress{
+  grid-row: 3 / 4;
+}
+.monet-description, .impress-description, .realism-vs-impress{
+  padding: 4%;
+  text-align: start;
+  max-width: 600px;
+}
+#monet h1{
+  padding-bottom: 4%;
+}
+/* for read more */
+.hide{
+  display: none;
+}
+
+.read-more-btn{
+  border: none;
+  background-color: rgb(218, 218, 218);
+  padding: 5%;
+  border-radius: 5px;
+  color: #123440;
+  font-size: 1em;
+}
+
+
+/* gallery page styling here */
+#gallery main{
+  background-image: url(../images/background8.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  /* contain because mobile is doing something weird */
+  background-size: contain; 
+}
+#gallery-container{
+  background-color: #d9cfc9;
+}
+/* filter on the gallery page */
+.filter-mobile{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.filter-desktop{
+  display: none;
+}
+#category{
+  padding: 1% 20% 1% 20%;
+  text-align: center;
+  text-transform: capitalize;
+  color: #123440;
+  background-color: rgba(249, 252, 255, .5);
+}
+.filter-hide{
+  display: none !important;
+}
+
+/* images */
+.img-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  padding-top: 4%;
+}
+.img-hide{
+  /* for load more */
+  display: none;
+}
+/* load more button styling */
+.load-more-btn{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  background-color: #48608f;
+  color: whitesmoke;
+  padding: 3% 7% 3% 7%;
+  margin: 5% auto 7% auto;
+  border: 0 none;
+  border-radius: 5%;
+  font-size: 1em;
+}
+.img-container div:nth-of-type(odd){
+  animation: filter-animate 2s ease;
+}
+@keyframes filter-animate{
+  from{
+    filter:grayscale(80%);
+  }
+  to{
+    filter:grayscale(0%);
+  }
+}
+
+
+/* more artists styling here */
+#more main{
+  background-color: #ad9fb8;
+  background-image: url(../images/background3.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.more-card{
+  /* border : 1px solid #123440; */
+  border-radius: 2%;
+  background-color: rgba(255, 255, 255, .8);
+  margin: 5%;
+  padding: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  max-height: 500px;
+  overflow: scroll;
+}
+.name{
+  font-weight: 900;
+  font-size: large;
+}
+.more-container{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.allan-freelon{
+  grid-row: 1 / 2;
+}
+.mary-cassatt{
+  grid-row: 2 / 3;
+}
+.berthe-morisot{
+  grid-row: 3 / 4;
+}
+
+
+/* impressionism page styling here */
+#impress-container{
+  width: 100%;
+  /* hide the weird white space when animation is happening */
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden; 
+}
+.neo-impress, .post-impress, .impressionism{
+  /* display: inline-block; */
+  /* need to change min height for desktop */
+  min-height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2;
+  position: relative;
+}
+.impressionism{
+  background-image: url(../images/impress/impression-sunrise.jpg);
+}
+.neo-impress{
+  background-image: url(../images/impress/Circus-Sideshow.jpeg);
+}
+.post-impress{
+  background-image: url(../images/impress/Starry-Night.jpeg);
+}
+/* .neo-impress > *, .post-impress > *, .impressionism > *{
+  z-index: 10;
+  position: relative;
+} */
+
+.neo-impress::after, .post-impress::after, .impressionism::after{
+  content: ""; 
+  z-index: -1;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+  animation: gradient 5s ease;
+}
+
+.neo-impress h1, .post-impress h1, .impressionism h1{
+  color: whitesmoke;
+  font-weight: 800;
+  font-size: 30px;
+  padding-top: 7%;
+  /* text animation */
+  animation-name: slidein_right;
+  animation-duration: 3s;
+}
+
+.neo-impress p, .post-impress p, .impressionism p{
+  color: whitesmoke;
+  padding: 2% 5%;
+  font-style: italic;
+  /* text animation */
+  animation-name: slidein_left;
+  animation-duration: 3s;
+}
+
+.neo-impress a, .post-impress a, .impressionism a{
+  color: whitesmoke;
+}
+
+
+/* animation for the text */
+@keyframes slidein_right{
+  from{
+    transform: translateX(100%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slidein_left{
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+
+/* animation for gradient */
+@keyframes gradient{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
+/* contact me page */
+#contact-container{
+  background: whitesmoke;
+  min-height: 100vh;
+  min-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding: 5%;
+
+}
+#contact-container label{
+  display: block;
+  text-align: start;
+}
+
+#contact-container h1{
+  padding-bottom: 5%;
+}
+
+input[type=text], textarea {
+  resize: vertical;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 2%;
+}
+#contact-container input[type="submit"]{
+  border: none;
+  width: 100%;
+  padding: 3%;
+  background: #123440;
+  color: whitesmoke;
+  margin-bottom: 5%;
+}
+
+
+/* for accessibility */
+@media screen and (prefers-reduced-motion: reduce){
+ *{
+    animation: none;
+    transition: none;
+  }
+
+}
+
+/* 
+@media only screen and (min-width: 1000px) {
+  .filter-mobile{
+    display: none;
+  }
+
+  .neo-impress, .post-impress, .impressionism{
+    min-height: 100vh;
+  }
+
+  .filter button{
+    text-transform: capitalize;
+    background-color: whitesmoke;
+    padding: 2%;
+  
+    border: none;
+    border-radius: 5px;
+    color: #123440;
+    font-size: 1em;
+    margin: 0 5%;
+  }
+
+  .menu .link{
+    display: flex;
+  }
+
+
+} */
