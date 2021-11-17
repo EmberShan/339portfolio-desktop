@@ -294,44 +294,38 @@ footer p{
 
   overflow: hidden; 
 }
-.neo-impress, .post-impress, .impressionism{
-  /* display: inline-block; */
-  /* need to change min height for desktop */
+#neo-impress, #post-impress, #impressionism{
   min-height: 300px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -2;
   position: relative;
+  z-index: 0;
 }
-.impressionism{
+#impressionism{
   background-image: url(../images/impress/Impression_sunrise.jpeg);
 }
-.neo-impress{
+#neo-impress{
   background-image: url(../images/impress/A_Sunday_on_La_Grande_Jatte.jpeg);
 }
-.post-impress{
+#post-impress{
   background-image: url(../images/impress/Starry_Night.jpeg);
 }
-/* .neo-impress > *, .post-impress > *, .impressionism > *{
-  z-index: 10;
-  position: relative;
-} */
 
-.neo-impress::after, .post-impress::after, .impressionism::after{
+#neo-impress::after, #post-impress::after, #impressionism::after{
   content: ""; 
   z-index: -1;
-  display: block;
+  /* display: block; */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
   animation: gradient 5s ease;
 }
 
-.neo-impress h1, .post-impress h1, .impressionism h1{
+#neo-impress h1, #post-impress h1, #impressionism h1{
   color: whitesmoke;
   font-weight: 800;
   font-size: 30px;
@@ -341,16 +335,13 @@ footer p{
   animation-duration: 3s; */
 }
 
-.neo-impress p, .post-impress p, .impressionism p{
+#neo-impress p, #post-impress p, #impressionism p{
   color: whitesmoke;
   padding: 2% 5%;
   font-style: italic;
-  /* text animation */
-  /* animation-name: slidein_left;
-  animation-duration: 3s; */
 }
 
-.neo-impress a, .post-impress a, .impressionism a{
+#neo-impress a, #post-impress a, #impressionism a{
   color: whitesmoke;
 }
 
@@ -417,11 +408,9 @@ input[type=text], textarea {
 
 
 @media only screen and (min-width: 750px) {
-  h1{
-    padding-top: 2%;
-  }
-  .page-intro{
-    padding-bottom: 1%;
+  h1, .page-intro{
+    /* padding-top: 2%; */
+    margin: auto;
   }
   /* menu bar for desktop */
   .menu-bar, .hamburger-menu{
@@ -448,7 +437,7 @@ input[type=text], textarea {
   }
   main{
     padding-bottom: 5%;
-    padding-top: 5%;
+    padding-top: 2%;
   }
   .img{
     margin: 5px;
@@ -462,10 +451,25 @@ input[type=text], textarea {
 
 
   /* impressionism page snap effects for desktop */
+  .pic-container::-webkit-scrollbar {
+    /* hide the weird second scroll bar */
+    display: none;
+  }
   .pic-container div{
     height: 100vh;
     scroll-snap-align: start;
     background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  #impress-container h1{
+    font-size: 4em;
+    font-weight: 400;
+    letter-spacing: .05em;
+    text-shadow: 2px 2px rgba(2, 2, 2, .5);
   }
   .pic-container{
     scroll-snap-type: y mandatory;
@@ -476,7 +480,38 @@ input[type=text], textarea {
     padding-bottom: 0;
     padding-top: 0;
   }
-  
+  .fullscreen-scroll a{
+    display: inline-block;
+    position: relative;
+    top: 20%;
+    font-size: 1.8em;
+    cursor: pointer;
+    z-index: 10;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  .fullscreen-scroll a:hover{
+    opacity: .5;
+  }
+  .fullscreen-scroll a span{
+    position: absolute;
+    top: 7vh;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+  }
+  #back-to-top span{
+    top: 9vh;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
 
   /* monet */
   #monet-container{
@@ -545,6 +580,9 @@ input[type=text], textarea {
     width: 98%;
     height: 300px;
   }
+  .description{
+    padding-top: 5%;
+  }
   .allan-freelon{
     grid-column: 1 / 2;
     grid-row: 1/-1;
@@ -600,7 +638,7 @@ input[type=text], textarea {
     display: none;
   } */
 
-  .neo-impress, .post-impress, .impressionism{
+  #neo-impress, #post-impress, #impressionism{
     min-height: 100vh;
   }
 

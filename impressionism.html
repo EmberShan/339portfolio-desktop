@@ -48,27 +48,36 @@
   <!-- <h1>More about Impressionism</h1> -->
   <div class = "pic-container">
 
-    <div class = "impressionism">
-      <h1> Impressionism </h1>
-      <p>
-        An art movement led by Claude Monet and other Paris-based artists. It features small, thin, yet visible brush strokes. 
-      </p>
+    <div id = "impressionism" class = "fullscreen-scroll">
+      <section>
+        <h1> Impressionism </h1>
+        <p>
+          An art movement led by Claude Monet and other Paris-based artists. It features small, thin, yet visible brush strokes. 
+        </p>
+        <a href="#neo-impress"><span></span>Scroll</a>
+      </section>
     </div>
 
-    <div class = "neo-impress">
-      <h1> Neo-Impressionism </h1>
-      <p>
-        Neo-impressionism utilizes Divisionism which means using dots of different 
-        colors to represent an object instead of mixing the colors together. 
-      </p>
+    <div id = "neo-impress" class = "fullscreen-scroll">
+      <section>
+        <h1> Neo-Impressionism </h1>
+        <p>
+          Neo-impressionism utilizes Divisionism which means using dots of different 
+          colors to represent an object instead of mixing the colors together. 
+        </p>
+        <a href="#post-impress"><span></span>Scroll</a>
+      </section>
     </div>
   
-    <div class = "post-impress">
-      <h1>Post-Impressionism</h1>
-      <p>
-        Instead of optical impressions, Post-impressionism 
-        expresses emotions on themes of deeper symbolism. 
-      </p>
+    <div id = "post-impress" class = "fullscreen-scroll">
+      <section>
+        <h1>Post-Impressionism</h1>
+        <p>
+          Instead of optical impressions, Post-impressionism 
+          expresses emotions on themes of deeper symbolism. 
+        </p>
+        <a href="#impressionism" id = "back-to-top"><span></span>Back To Top</a>
+      </section>
     </div>
 
   </div>
@@ -79,6 +88,15 @@
 <footer>
   <p>&copy; Ember Shan - 339 2021</p>
 </footer>
+
+<script>
+  $(function() {
+  $('a[href*=#]').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+    });
+  });
+</script>
 
 </body>
 </html>
