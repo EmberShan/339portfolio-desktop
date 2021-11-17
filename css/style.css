@@ -374,6 +374,7 @@ footer p{
 #contact-container label{
   display: block;
   text-align: start;
+  font-weight: 600;
 }
 
 #contact-container h1{
@@ -407,6 +408,12 @@ input[type=text], textarea {
 
 
 @media only screen and (min-width: 750px) {
+  main{
+    background-image: url(../images/background8-large.jpg) !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+  }
   h1, .page-intro{
     /* padding-top: 2%; */
     margin: auto;
@@ -617,13 +624,12 @@ input[type=text], textarea {
   /* more */
   .more-container{
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: minmax(80vh, auto);
   }
   .more-card{
     /* max-height: 700px; */
     margin: 2%;
     margin-bottom: 10%;
-    background-color: transparent;
   }
   .more-container div img{
     object-fit: cover;
@@ -656,7 +662,6 @@ input[type=text], textarea {
     padding-bottom: 0;
     padding-top: 4%;
   }
-
   /* gallery uses flex */
   .img-container{
     flex-direction: row;
