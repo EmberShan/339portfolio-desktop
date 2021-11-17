@@ -158,18 +158,9 @@ footer p{
   background-size: cover;
 
   display: grid;
-  grid-template-rows: repeat(auto, 3);
 
 }
-.monet-description{
-  grid-row: 1 / 2;
-}
-.impress-description{
-  grid-row: 2 / 3;
-}
-.realism-vs-impress{
-  grid-row: 3 / 4;
-}
+
 .monet-description, .impress-description, .realism-vs-impress{
   padding: 4%;
   text-align: start;
@@ -488,32 +479,53 @@ input[type=text], textarea {
   
 
   /* monet */
-  #more main{
-    background-image: none;
-    background-color: whitesmoke;
-  }
   #monet-container{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: repeat(3, minmax(80vh, auto));
+    padding-top: 10vh;
+    grid-row-gap: 20px;
     background-image: none;
+  }
+  #monet-container .img:hover{
+    transform: translateY(0);
+  }
+  #monet-container h1, .text{
+    margin: auto;
   }
   #monet-container div img{
     object-fit: cover;
+    width: 98%;
     height: 500px;
-    width: 100%;
-    object-position: 0 10%;
+    object-position: 45% 20%;
   }
-  .monet-description{
-    grid-column: 1 / 2;
-    grid-row: 1/-1;
+  .read-more-btn, .dots{
+    display: none;
   }
-  .impress-description{
-    grid-column: 2 / 3;
-    grid-row: 1/-1;
+  .hide{
+    display: inline;
   }
-  .realism-vs-impress{
-    grid-column: 3 / 4;
-    grid-row: 1/-1;
+
+  /* styling grid */
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin: 0 5% 0 5%;
+    padding: 0 5% 0 5%;
+  }
+  .container1{
+    grid-row: 1 / 2;
+  }
+  .container1{
+    grid-row: 2 / 3;
+  }
+  .container3{
+    grid-row: 3 / 4;
+  }
+  .image{
+    grid-column: 1/2;
+  }
+  .monet_text{
+    grid-column: 2/3;
   }
 
   /* more */
@@ -529,9 +541,9 @@ input[type=text], textarea {
   }
   .more-container div img{
     object-fit: cover;
-    height: 300px;
-    width: 400px;
     object-position: 0 10%;
+    width: 98%;
+    height: 300px;
   }
   .allan-freelon{
     grid-column: 1 / 2;
@@ -568,8 +580,9 @@ input[type=text], textarea {
   }
   .img-container img{
     object-fit: cover;
+    object-position: 0 10%;
     width: 98%;
-    height: 350px;
+    height: 90%;
   }
   .caption{
     padding: 0;
