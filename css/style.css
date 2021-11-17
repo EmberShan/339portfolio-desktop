@@ -321,7 +321,7 @@ footer p{
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6) 100%);
   animation: gradient 5s ease;
 }
 
@@ -340,9 +340,8 @@ footer p{
   padding: 2% 5%;
   font-style: italic;
 }
-
-#neo-impress a, #post-impress a, #impressionism a{
-  color: whitesmoke;
+.fullscreen-scroll a{
+  display: none;
 }
 
 /* animation for gradient */
@@ -471,6 +470,9 @@ input[type=text], textarea {
     letter-spacing: .05em;
     text-shadow: 2px 2px rgba(2, 2, 2, .5);
   }
+  #impress-container p{
+    padding-top: 0;
+  }
   .pic-container{
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -482,6 +484,7 @@ input[type=text], textarea {
   }
   .fullscreen-scroll a{
     display: inline-block;
+    color: whitesmoke;
     position: relative;
     top: 20%;
     font-size: 1.8em;
