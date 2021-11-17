@@ -483,8 +483,6 @@ input[type=text], textarea {
     padding-top: 0;
   }
   .fullscreen-scroll a{
-    margin: auto;
-
     display: inline-block;
     color: whitesmoke;
     position: relative;
@@ -498,6 +496,7 @@ input[type=text], textarea {
   }
   .fullscreen-scroll a:hover{
     opacity: .5;
+    transform: translateY(2%);
   }
   .fullscreen-scroll a span{
     position: absolute;
