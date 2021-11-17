@@ -15,10 +15,10 @@ body{
 }
 
 /* skip to */
-/*  */
 a.skip{
   background: whitesmoke;
   left: 0;
+  top: -100px;
   padding: 6px;
   position: absolute;
   opacity: 0;
@@ -37,8 +37,8 @@ a.skip:focus{
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 .sticky{
   position: fixed;
@@ -70,16 +70,10 @@ main{
 }
 /*  */
 .navlinks{
-  text-align: center;
   display: none;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
 }
 .navlinks ul{
   /*  */
-  justify-content: space-around;
-  align-items: center;
   width: 100%;
 }
 .navlinks .link, .menu .menu-bar{
@@ -146,6 +140,7 @@ footer{
   font-weight: 400;
   color: whitesmoke;
   background-color: #123440;
+  max-height: 30px;
 }
 footer p{
   padding : 0;
@@ -267,22 +262,18 @@ footer p{
 
 /* more artists styling here */
 #more main{
-  background-color: #ad9fb8;
-  background-image: url(../images/background3.jpg);
+  /* background-color: #ad9fb8;
+  background-image: url(../images/background3.jpg); */
+  background-color: whitesmoke;
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 .more-card{
-  /* border : 1px solid #123440; */
-  border-radius: 2%;
-  background-color: rgba(255, 255, 255, .8);
+  /* background-color: rgba(255, 255, 255, .8); */
   margin: 5%;
   padding: 3%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  max-height: 500px;
-  overflow: scroll;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .name{
   font-weight: 900;
@@ -323,13 +314,13 @@ footer p{
   position: relative;
 }
 .impressionism{
-  background-image: url(../images/impress/impression-sunrise.jpg);
+  background-image: url(../images/impress/Impression_sunrise.jpeg);
 }
 .neo-impress{
-  background-image: url(../images/impress/Circus-Sideshow.jpeg);
+  background-image: url(../images/impress/A_Sunday_on_La_Grande_Jatte.jpeg);
 }
 .post-impress{
-  background-image: url(../images/impress/Starry-Night.jpeg);
+  background-image: url(../images/impress/Starry_Night.jpeg);
 }
 /* .neo-impress > *, .post-impress > *, .impressionism > *{
   z-index: 10;
@@ -355,8 +346,8 @@ footer p{
   font-size: 30px;
   padding-top: 7%;
   /* text animation */
-  animation-name: slidein_right;
-  animation-duration: 3s;
+  /* animation-name: slidein_right;
+  animation-duration: 3s; */
 }
 
 .neo-impress p, .post-impress p, .impressionism p{
@@ -364,32 +355,12 @@ footer p{
   padding: 2% 5%;
   font-style: italic;
   /* text animation */
-  animation-name: slidein_left;
-  animation-duration: 3s;
+  /* animation-name: slidein_left;
+  animation-duration: 3s; */
 }
 
 .neo-impress a, .post-impress a, .impressionism a{
   color: whitesmoke;
-}
-
-
-/* animation for the text */
-@keyframes slidein_right{
-  from{
-    transform: translateX(100%);
-  }
-  to{
-    transform: translateX(0%);
-  }
-}
-
-@keyframes slidein_left{
-  from{
-    transform: translateX(-100%);
-  }
-  to{
-    transform: translateX(0%);
-  }
 }
 
 /* animation for gradient */
@@ -453,11 +424,168 @@ input[type=text], textarea {
 
 }
 
-/* 
-@media only screen and (min-width: 1000px) {
-  .filter-mobile{
+
+@media only screen and (min-width: 750px) {
+  h1{
+    padding-top: 2%;
+  }
+  .page-intro{
+    padding-bottom: 1%;
+  }
+  /* menu bar for desktop */
+  .menu-bar, .hamburger-menu{
     display: none;
   }
+  .menu{
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .navlinks{
+    display: flex;
+    width: 100%;
+  }
+  .navlinks ul{
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .navlinks li{
+    width: 20%;
+  }
+  .navlinks .displayed .link{
+    letter-spacing: 0;
+  }
+  main{
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  .img{
+    margin: 5px;
+    transition: 0.3s;
+  }
+  .img:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    transform: translateY(-1%);
+  }
+
+
+
+  /* impressionism page snap effects for desktop */
+  .pic-container div{
+    height: 100vh;
+    scroll-snap-align: start;
+    background-size: cover;
+  }
+  .pic-container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  #impress-container{
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  
+
+  /* monet */
+  #more main{
+    background-image: none;
+    background-color: whitesmoke;
+  }
+  #monet-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    background-image: none;
+  }
+  #monet-container div img{
+    object-fit: cover;
+    height: 500px;
+    width: 100%;
+    object-position: 0 10%;
+  }
+  .monet-description{
+    grid-column: 1 / 2;
+    grid-row: 1/-1;
+  }
+  .impress-description{
+    grid-column: 2 / 3;
+    grid-row: 1/-1;
+  }
+  .realism-vs-impress{
+    grid-column: 3 / 4;
+    grid-row: 1/-1;
+  }
+
+  /* more */
+  .more-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .more-card{
+    /* max-height: 700px; */
+    margin: 2%;
+    margin-bottom: 10%;
+    background-color: transparent;
+  }
+  .more-container div img{
+    object-fit: cover;
+    height: 300px;
+    width: 400px;
+    object-position: 0 10%;
+  }
+  .allan-freelon{
+    grid-column: 1 / 2;
+    grid-row: 1/-1;
+  }
+  .mary-cassatt{
+    grid-column: 2 / 3;
+    grid-row: 1/-1;
+  }
+  .berthe-morisot{
+    grid-column: 3 / 4;
+    grid-row: 1/-1;
+  }
+
+
+  /* contact me */
+  form{
+    width: 700px;
+  }
+  #contact-container h1{
+    padding-bottom: 0;
+    padding-top: 4%;
+  }
+
+  /* gallery uses flex */
+  .img-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .img-container div{
+    width: 23%;
+    height: 400px;
+    background-size: cover; 
+  }
+  .img-container img{
+    object-fit: cover;
+    width: 98%;
+    height: 350px;
+  }
+  .caption{
+    padding: 0;
+  }
+  .load-more-btn{
+    padding: 2% 4% 2% 4%;
+    transition: 0.3s;
+  }
+  .load-more-btn:hover{
+    transform: translateY(-4%);
+    font-size: 1.2em;
+  }
+
+  /* .filter-mobile{
+    display: none;
+  } */
 
   .neo-impress, .post-impress, .impressionism{
     min-height: 100vh;
@@ -475,9 +603,7 @@ input[type=text], textarea {
     margin: 0 5%;
   }
 
-  .menu .link{
-    display: flex;
-  }
+  
 
 
-} */
+}
