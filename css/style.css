@@ -386,6 +386,7 @@ input[type=text], input[type=email], textarea {
   }
   main h1{
     font-size: 2em;
+    padding-top: 10%;
   }
   h1, .page-intro{
     margin: auto;
@@ -405,10 +406,15 @@ input[type=text], input[type=email], textarea {
   .navlinks ul{
     display: flex;
     flex-direction: row;
-    
+    /* justify-content: flex-end; */
   }
   .navlinks li{
-    width: 20%;
+    width: minmax(20%, auto);
+    white-space: nowrap;
+    padding: 1% 3% 1% 3%;
+  }
+  .navlinks li:hover{
+    text-decoration: underline;
   }
   .navlinks .displayed .link{
     letter-spacing: 0;
@@ -546,7 +552,7 @@ input[type=text], input[type=email], textarea {
   /* monet */
   #monet-container{
     grid-template-rows: repeat(3, minmax(80vh, auto));
-    padding-top: 10vh;
+    margin-top: 10vh;
     grid-row-gap: 20px;
   }
   #monet-container .img:hover{
