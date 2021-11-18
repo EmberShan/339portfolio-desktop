@@ -47,6 +47,12 @@ a.skip:focus{
 }
 main{
   padding-top: 3em;
+  background-color: #d9cfc9;
+  background-image: url(../images/background8-large.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  /* contain because mobile is doing something weird */
+  background-size: contain; 
 }
 /*  */
 .hamburger-menu{
@@ -150,15 +156,7 @@ footer p{
 /* container for all content on the Monet page */
 
 #monet-container{
-  background-color: #d9cfc9;
-
-  background-image: url(../images/background8.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-
   display: grid;
-
 }
 
 .monet-description, .impress-description, .realism-vs-impress{
@@ -185,16 +183,6 @@ footer p{
 
 
 /* gallery page styling here */
-#gallery main{
-  background-image: url(../images/background8.jpg);
-  background-repeat: repeat;
-  background-attachment: fixed;
-  /* contain because mobile is doing something weird */
-  background-size: contain; 
-}
-#gallery-container{
-  background-color: #d9cfc9;
-}
 /* filter on the gallery page */
 .filter-mobile{
   display: flex;
@@ -252,16 +240,7 @@ footer p{
 
 
 /* more artists styling here */
-#more main{
-  /* background-color: #ad9fb8;
-  background-image: url(../images/background3.jpg); */
-  background-color: whitesmoke;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
 .more-card{
-  /* background-color: rgba(255, 255, 255, .8); */
   margin: 5%;
   padding: 3%;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -357,7 +336,6 @@ footer p{
 
 /* contact me page */
 #contact-container{
-  background: whitesmoke;
   min-height: 100vh;
   min-width: 100%;
 
@@ -406,16 +384,17 @@ input[type=text], textarea {
 
 }
 
-
+/* larger screens */
 @media only screen and (min-width: 750px) {
   main{
-    background-image: url(../images/background8-large.jpg) !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover; 
   }
+  main h1{
+    font-size: 2em;
+  }
   h1, .page-intro{
-    /* padding-top: 2%; */
     margin: auto;
   }
   /* menu bar for desktop */
@@ -576,7 +555,6 @@ input[type=text], textarea {
     grid-template-rows: repeat(3, minmax(80vh, auto));
     padding-top: 10vh;
     grid-row-gap: 20px;
-    background-image: none;
   }
   #monet-container .img:hover{
     transform: translateY(0);
@@ -680,6 +658,7 @@ input[type=text], textarea {
   }
   .caption{
     padding: 0;
+    padding-bottom: 1%;
   }
   .load-more-btn{
     padding: 2% 4% 2% 4%;
