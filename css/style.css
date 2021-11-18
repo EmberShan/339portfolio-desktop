@@ -374,16 +374,6 @@ input[type=text], input[type=email], textarea {
   margin-bottom: 5%;
 }
 
-
-/* for accessibility */
-@media screen and (prefers-reduced-motion: reduce){
- *{
-    animation: none;
-    transition: none;
-  }
-
-}
-
 /* larger screens */
 @media only screen and (min-width: 750px) {
   main{
@@ -754,7 +744,20 @@ input[type=text], input[type=email], textarea {
     margin: 0 5%;
   }
 
-  
-
-
 }
+
+
+
+/* for accessibility */
+@media (prefers-reduced-motion: reduce){
+  *{
+     animation: none !important;
+     transition: none !important;
+   }
+
+
+   .fullscreen-scroll a span::before {
+    animation: none;
+  }
+ 
+ }
