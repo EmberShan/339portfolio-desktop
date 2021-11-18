@@ -498,7 +498,7 @@ input[type=text], textarea {
     box-sizing: border-box;
   }
   #back-to-top span{
-    top: -2vh;
+    /* top: -2vh; */
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
   }
@@ -601,35 +601,88 @@ input[type=text], textarea {
 
   /* more */
   .more-container{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: minmax(80vh, auto);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 40vh);
+  }
+  .name{
+    padding: 0;
   }
   .more-card{
     /* max-height: 700px; */
     margin: 2%;
     margin-bottom: 10%;
+    overflow: hidden;
+    /*  */
+    box-shadow: none;
+    padding: 10px 10px 10px 10px;
+    background-color: none;
+    margin: 3%;
   }
   .more-container div img{
     object-fit: cover;
-    object-position: 0 10%;
+    object-position: 10% 25%;
     width: 98%;
-    height: 300px;
+    height: 80%;
   }
   .description{
-    padding-top: 5%;
+    padding: 10%;
+    margin: auto;
   }
-  .allan-freelon{
+  /* fitting images to grid */
+  .edgar-degas{
     grid-column: 1 / 2;
-    grid-row: 1/-1;
+    grid-row: 1 / 3;
   }
   .mary-cassatt{
-    grid-column: 2 / 3;
-    grid-row: 1/-1;
+    grid-column: 1 / 2;
+    grid-row: 3 / -1;
+  }
+  /* second column */
+  .childe-hassam{
+    grid-column: 2 / -1;
+    grid-row: 1 / 4;
   }
   .berthe-morisot{
-    grid-column: 3 / 4;
-    grid-row: 1/-1;
+    grid-column: 2 / -1;
+    grid-row: 4 / -1;
   }
+  /* flip card */
+  .flipcard{
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    /* perspective: 1000px; */
+  }
+  .flipcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .flipcard:hover .flipcard-inner {
+    transform: rotateY(180deg);
+    /* turn off the img effect */
+    box-shadow: none;
+  }
+  .flipcard-front, .flipcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+  .flipcard-front {
+    background-color: whitesmoke;
+    color: black;
+  }
+  .flipcard-back {
+    background-color: whitesmoke;
+    color: black;
+    transform: rotateY(180deg);
+  }
+
 
 
   /* contact me */
@@ -646,7 +699,7 @@ input[type=text], textarea {
     flex-wrap: wrap;
   }
   .img-container div{
-    width: 23%;
+    width: 400px;
     height: 400px;
     background-size: cover; 
   }
