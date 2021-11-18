@@ -242,6 +242,10 @@ footer p{
 
 
 /* more artists styling here */
+#more-container{
+  background-color: #d9cfc9;
+  background-image: none;
+}
 .more-card{
   margin: 5%;
   padding: 3%;
@@ -253,7 +257,6 @@ footer p{
 }
 .more-container{
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
 }
 .allan-freelon{
   grid-row: 1 / 2;
@@ -590,6 +593,9 @@ input[type=text], input[type=email], textarea {
   }
 
   /* more */
+  #more-container{
+    background-image: url(../images/background8-large.jpg);
+  }
   .more-container{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 20vh);
