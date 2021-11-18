@@ -486,7 +486,7 @@ input[type=text], textarea {
   }
   .fullscreen-scroll a span{
     position: absolute;
-    top: 7vh;
+    top: 8vh;
     left: 50%;
     width: 24px;
     height: 24px;
@@ -498,7 +498,7 @@ input[type=text], textarea {
     box-sizing: border-box;
   }
   #back-to-top span{
-    /* top: -2vh; */
+    /* top: 8vh; */
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
   }
@@ -602,49 +602,51 @@ input[type=text], textarea {
   /* more */
   .more-container{
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 40vh);
+    grid-template-rows: repeat(6, 20vh);
   }
   .name{
-    padding: 0;
+    /* placing the name in the center of each card */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* styling the text */
+    letter-spacing: .1em;
+    white-space: nowrap;
+    font-size: 2.2em;
+    color: whitesmoke;
+    text-shadow: 2px 2px rgba(2, 2, 2, .5);
   }
   .more-card{
-    /* max-height: 700px; */
-    margin: 2%;
-    margin-bottom: 10%;
-    overflow: hidden;
-    /*  */
-    box-shadow: none;
-    padding: 10px 10px 10px 10px;
-    background-color: none;
-    margin: 3%;
+    margin: 1%;
   }
   .more-container div img{
     object-fit: cover;
     object-position: 10% 25%;
-    width: 98%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
   }
-  .description{
-    padding: 10%;
-    margin: auto;
+  .more-container .caption{
+    color: black;
   }
   /* fitting images to grid */
   .edgar-degas{
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
   }
   .mary-cassatt{
     grid-column: 1 / 2;
-    grid-row: 3 / -1;
+    grid-row: 4 / -1;
   }
   /* second column */
   .childe-hassam{
     grid-column: 2 / -1;
-    grid-row: 1 / 4;
+    grid-row: 1 / 5;
   }
   .berthe-morisot{
     grid-column: 2 / -1;
-    grid-row: 4 / -1;
+    grid-row: 5 / -1;
   }
   /* flip card */
   .flipcard{
@@ -658,13 +660,13 @@ input[type=text], textarea {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    /* animationt to flip the cards */
+    transition: transform 0.5s;
+    transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
     transform-style: preserve-3d;
   }
   .flipcard:hover .flipcard-inner {
     transform: rotateY(180deg);
-    /* turn off the img effect */
-    box-shadow: none;
   }
   .flipcard-front, .flipcard-back {
     position: absolute;
@@ -674,13 +676,23 @@ input[type=text], textarea {
     backface-visibility: hidden;
   }
   .flipcard-front {
-    background-color: whitesmoke;
+    border-radius: 20px;
+    background-color: transparent;
     color: black;
   }
+  .description{
+    margin: auto;
+    line-height: 2;
+    font-weight: 600;
+    align-items: center; 
+    padding: 0 10% 0 10%;
+  }
   .flipcard-back {
+    border-radius: 20px;
     background-color: whitesmoke;
     color: black;
     transform: rotateY(180deg);
+    display: flex;
   }
 
 
