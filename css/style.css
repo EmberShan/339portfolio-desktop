@@ -19,9 +19,11 @@ body{
 /* skip to */
 a.skip{
   background: whitesmoke;
+  font-weight: 700;
+  font-size: 1.2em;
   left: 0;
   top: -100px;
-  padding: 6px;
+  padding: 20px;
   position: absolute;
   opacity: 0;
   -webkit-transition: top 1s ease-out;
@@ -29,7 +31,7 @@ a.skip{
   z-index: 10;
 }
 a.skip:focus{
-  top: 20px;
+  top: 50px;
   opacity: 1;
   color: black;
 }
@@ -435,6 +437,9 @@ input[type=text], input[type=email], textarea {
 
 
   /* impressionism page snap effects for desktop */
+  #impress-container{
+    background-color: #123440;
+  }
   .pic-container::-webkit-scrollbar {
     /* hide the weird second scroll bar */
     display: none;
@@ -485,8 +490,9 @@ input[type=text], input[type=email], textarea {
   }
   .fullscreen-scroll a span{
     position: absolute;
-    top: 8vh;
+    top: calc(50% + 30px);
     left: 50%;
+    transform: translate(-50%, -50%);
     width: 24px;
     height: 24px;
     margin-left: -12px;
@@ -497,14 +503,14 @@ input[type=text], input[type=email], textarea {
     box-sizing: border-box;
   }
   #back-to-top span{
-    /* top: 8vh; */
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
   }
   .fullscreen-scroll a span::before {
     position: absolute;
-    top: 0;
-    left: 21px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
     content: '';
     width: 2px;
@@ -600,6 +606,7 @@ input[type=text], input[type=email], textarea {
 
   /* more */
   #more-container{
+    background-color: whitesmoke;
     background-image: url(../images/background8-large.jpg);
   }
   .more-container{
@@ -620,7 +627,7 @@ input[type=text], input[type=email], textarea {
     text-shadow: 2px 2px rgba(2, 2, 2, .5);
   }
   .more-card{
-    margin: 1%;
+    margin: 0;
   }
   .more-container div img{
     object-fit: cover;
@@ -679,7 +686,11 @@ input[type=text], input[type=email], textarea {
   }
   .flipcard-front {
     border-radius: 20px;
-    background-color: transparent;
+    color: black;
+    background-color: #123440;
+  }
+  #more-caption{
+    /* background-color: whitesmoke; */
     color: black;
   }
   .description{
@@ -696,8 +707,6 @@ input[type=text], input[type=email], textarea {
     transform: rotateY(180deg);
     display: flex;
   }
-
-
 
   /* contact me */
   form{
