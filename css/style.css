@@ -385,10 +385,11 @@ input[type=text], input[type=email], textarea {
   }
   main h1{
     font-size: 2em;
-    padding-top: 10%;
+    padding-top: 5%;
   }
-  h1, .page-intro{
+  .page-intro{
     margin: auto;
+    padding-bottom: 2%;
   }
   /* menu bar for desktop */
   .menu-bar, .hamburger-menu{
@@ -405,7 +406,7 @@ input[type=text], input[type=email], textarea {
   .navlinks ul{
     display: flex;
     flex-direction: row;
-    /* justify-content: flex-end; */
+    justify-content: flex-start;
   }
   .navlinks li{
     width: minmax(20%, auto);
@@ -558,11 +559,12 @@ input[type=text], input[type=email], textarea {
     margin-top: 10vh;
     grid-row-gap: 20px;
   }
-  #monet-container .img:hover{
-    transform: translateY(0);
+  #monet-container h1{
+    padding-bottom: 0;
   }
-  #monet-container h1, .text{
-    margin: auto;
+  #monet-container .img:hover{
+    /* do not elevate the cards when hovering */
+    transform: translateY(0);
   }
   #monet-container div img{
     object-fit: cover;
@@ -581,24 +583,28 @@ input[type=text], input[type=email], textarea {
   .container{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     justify-content: center;
     margin: 0 5% 0 5%;
-    padding: 0 5% 0 5%;
+    padding: 0 5% 2% 5%;
+    align-items: center;
   }
   .container1{
     grid-row: 1 / 2;
   }
-  .container1{
+  .container2{
     grid-row: 2 / 3;
   }
   .container3{
     grid-row: 3 / 4;
   }
   .image{
-    grid-column: 1/2;
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
   }
   .monet_text{
-    grid-column: 2/3;
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
   }
 
   /* more */
@@ -709,7 +715,7 @@ input[type=text], input[type=email], textarea {
     width: 700px;
   }
   #contact-container h1{
-    padding-bottom: 0;
+    padding-bottom: 2%;
     padding-top: 4%;
   }
   /* gallery uses flex */
