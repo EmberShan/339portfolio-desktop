@@ -401,6 +401,7 @@ input[type=text], input[type=email], textarea {
   }
   .navlinks{
     display: flex;
+    flex-direction: row;
     width: 100%;
   }
   .navlinks ul{
@@ -431,8 +432,6 @@ input[type=text], input[type=email], textarea {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
     transform: translateY(-1%);
   }
-
-
 
   /* impressionism page snap effects for desktop */
   #impress-container{
@@ -625,7 +624,7 @@ input[type=text], input[type=email], textarea {
     /* styling the text */
     letter-spacing: .1em;
     white-space: nowrap;
-    font-size: 2.2em;
+    font-size: 2.1em;
     color: whitesmoke;
     text-shadow: 2px 2px rgba(2, 2, 2, .5);
   }
