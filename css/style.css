@@ -557,7 +557,6 @@ input[type=text], input[type=email], textarea {
   /* monet */
   #monet-container{
     grid-template-rows: repeat(3, minmax(80vh, auto));
-    margin-top: 10vh;
     grid-row-gap: 20px;
   }
   #monet-container h1{
@@ -591,6 +590,7 @@ input[type=text], input[type=email], textarea {
     align-items: center;
   }
   .container1{
+    margin-top: 10vh;
     grid-row: 1 / 2;
   }
   .container2{
