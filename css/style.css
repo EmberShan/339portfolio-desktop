@@ -629,6 +629,7 @@ input[type=text], input[type=email], textarea {
     font-size: 2.1em;
     color: whitesmoke;
     text-shadow: 2px 2px rgba(2, 2, 2, .5);
+    padding-top: 0;
   }
   .more-card{
     margin: 0;
